@@ -1,0 +1,74 @@
+name: Publish 1GAM-SPRUNG to Itch.io
+
+on:
+ push:
+  branches:
+  - main
+ pull_request:
+  branches:
+  - main
+env:
+#  BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }} # Add key to repo first
+ GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+ IS_MAIN: ${{ contains(github.ref, 'main') }}
+ PROJECT_NAME: "1GAM-SPRUNG"
+
+jobs:
+
+ Export:
+  runs-on: ubuntu-latest
+  steps:
+  - uses: actions/checkout@v2
+  
+  - name: Download + Authorize Godot
+    run: |
+       curl -L -o godot.zip https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip
+       unzip godot.zip
+       mv Godot_v4.4.1-stable_linux.x86_64 godot
+       ls
+       chmod +x godot
+ 
+  - name: Download Export Templates
+    run: |
+     curl -L -o export_templates.zip https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz
+     unzip export_templates.zip
+  
+  - name: Install Export Templates
+    run: |
+     mkdir -p ~/.local/share/godot/export_templates/4.2.1.stable
+     mv ./templates/* ~/.local/share/godot/export_templates/4.2.1.stable
+  
+  # TODO: Create exports and itch project
+  # - name: Export Web
+  #   run: |
+  #    mkdir -p ./Build
+  #    mkdir -p ./Build/web
+  #    mkdir -p ./Build/linux
+  #    mkdir -p ./Build/win
+  #    mkdir -p ./Build/mac
+  #    ./godot --headless --path ./ --export-release "Web" ./Build/web/index.html
+  #    ./godot --headless --path ./ --export-release "Linux" ./Build/linux/game.x86_64
+  #    ./godot --headless --path ./ --export-release "Windows" ./Build/win/game.exe
+  #    ./godot --headless --path ./ --export-release "Mac" ./Build/mac/game.zip
+    
+  # - name: Download + Authorize Butler
+  #   run: |
+  #       curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+  #       unzip butler.zip
+  #       chmod +x butler
+  #       ./butler -V
+
+  # - name: Login To Butler
+  #   run: ./butler login
+
+  # - name: Push Web to Itch
+  #   run: ./butler push ./Build/web maiconspas/1gam-sprung:web
+
+  # - name: Push Linux to Itch
+  #   run: ./butler push ./Build/linux maiconspas/1gam-sprung:linux
+
+  # - name: Push Windows to Itch
+  #   run: ./butler push ./Build/win maiconspas/1gam-sprung:windows
+
+  # - name: Push Mac to Itch
+  #   run: ./butler push ./Build/mac maiconspas/1gam-sprung:mac
