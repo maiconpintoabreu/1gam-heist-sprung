@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkdu0n2gmc0g0"]
+
+[ext_resource type="PackedScene" uid="uid://57a0eys2id63" path="res://Scenes/lock_cylinder.tscn" id="1_25cq5"]
+[ext_resource type="Script" uid="uid://bdi8vpr54vs1x" path="res://Scripts/lock.gd" id="1_sg53v"]
+
+[node name="LockView" type="Node2D"]
+
+[node name="Lock" type="Node2D" parent="."]
+position = Vector2(607, 341)
+scale = Vector2(3, 3)
+script = ExtResource("1_sg53v")
+
+[node name="LockCylinder" parent="Lock" instance=ExtResource("1_25cq5")]
+position = Vector2(-72, 0)
+
+[node name="LockCylinder2" parent="Lock" instance=ExtResource("1_25cq5")]
+position = Vector2(-37, 1)
+unlock_position = 20.0
+
+[node name="LockCylinder3" parent="Lock" instance=ExtResource("1_25cq5")]
+unlock_position = 45.0
+
+[node name="LockCylinder4" parent="Lock" instance=ExtResource("1_25cq5")]
+position = Vector2(37, 0)
+unlock_position = 35.0

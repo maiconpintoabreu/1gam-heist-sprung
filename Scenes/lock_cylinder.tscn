@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://57a0eys2id63"]
+
+[ext_resource type="Script" uid="uid://dvibakhpryqbe" path="res://Scripts/lock_cylinder.gd" id="1_bmdy6"]
+[ext_resource type="PackedScene" uid="uid://djpbd15vx71ng" path="res://Scenes/single_pin.tscn" id="1_xn2vg"]
+
+[sub_resource type="Gradient" id="Gradient_5ybm1"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xn2vg"]
+gradient = SubResource("Gradient_5ybm1")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ybm1"]
+size = Vector2(63, 3)
+
+[node name="LockCylinder" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_bmdy6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(53, -43)
+scale = Vector2(0.25, 0.84375)
+texture = SubResource("GradientTexture2D_xn2vg")
+offset = Vector2(-212, -10.6667)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -27)
+shape = SubResource("RectangleShape2D_5ybm1")
+
+[node name="SinglePin" parent="." instance=ExtResource("1_xn2vg")]
+position = Vector2(0, -18)
+scale = Vector2(0.5, 0.5)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
