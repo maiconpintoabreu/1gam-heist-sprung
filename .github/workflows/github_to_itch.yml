@@ -30,8 +30,8 @@ jobs:
   
   - name: Install Export Templates
     run: |
-     mkdir -p ~/.local/share/godot/export_templates/4.2.1.stable
-     mv ./templates/* ~/.local/share/godot/export_templates/4.2.1.stable
+     mkdir -p ~/.local/share/godot/export_templates/4.4.1.stable
+     mv ./templates/* ~/.local/share/godot/export_templates/4.4.1.stable
   
   - name: Export Web
     run: |
