@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://djpbd15vx71ng"]
+
+[ext_resource type="Script" uid="uid://b1apgrr28cbp2" path="res://Scripts/single_pin.gd" id="1_rxefh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxefh"]
+size = Vector2(37, 2)
+
+[node name="SinglePin" type="Node2D"]
+script = ExtResource("1_rxefh")
+
+[node name="PinStack" type="Node2D" parent="."]
+
+[node name="Spring" type="ColorRect" parent="PinStack"]
+offset_left = -10.0
+offset_top = -55.0
+offset_right = 10.0
+offset_bottom = -35.0
+color = Color(0, 0.729412, 0.129412, 1)
+
+[node name="DriverPin" type="ColorRect" parent="PinStack"]
+offset_left = -10.0
+offset_top = -34.0
+offset_right = 10.0
+offset_bottom = -4.0
+color = Color(1, 0.521569, 0, 1)
+
+[node name="ShearLine" type="Area2D" parent="PinStack"]
+position = Vector2(-10, 0)
+collision_mask = 2
+monitoring = false
+
+[node name="ColorRect" type="ColorRect" parent="PinStack/ShearLine"]
+offset_left = -2.0
+offset_top = -3.0
+offset_right = 23.0
+offset_bottom = -1.0
+color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PinStack/ShearLine"]
+position = Vector2(11.5, -2)
+shape = SubResource("RectangleShape2D_rxefh")
+
+[node name="KeyPin" type="ColorRect" parent="PinStack"]
+offset_left = -10.0
+offset_right = 10.0
+offset_bottom = 40.0
+color = Color(0.581033, 0.581033, 0.581033, 1)
