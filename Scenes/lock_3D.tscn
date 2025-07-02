@@ -1,0 +1,340 @@
+[gd_scene load_steps=8 format=3 uid="uid://y2vjdurag4ao"]
+
+[ext_resource type="PackedScene" uid="uid://c7amnpxffemsu" path="res://Assets/LockParts/SM_grooves_filler.glb" id="1_bgcyw"]
+[ext_resource type="PackedScene" uid="uid://d4b1bhgqsywih" path="res://Assets/LockParts/SM_keyhole.glb" id="2_iy5ou"]
+[ext_resource type="PackedScene" uid="uid://cc1rtlwraexdv" path="res://Assets/LockParts/SM_key_filler.glb" id="3_a5x1v"]
+[ext_resource type="PackedScene" uid="uid://b5m5pvah1xlci" path="res://Assets/LockParts/SM_key_walls.glb" id="4_x8dxt"]
+[ext_resource type="PackedScene" uid="uid://dne8h6xbwm8bw" path="res://Assets/LockParts/SM_outter_door_blockout.glb" id="5_hsgym"]
+[ext_resource type="PackedScene" uid="uid://dbugqe16ojv6k" path="res://Assets/LockParts/SM_pin_hole.glb" id="6_a0bp5"]
+[ext_resource type="PackedScene" uid="uid://db8gvvdv64qj0" path="res://Assets/LockParts/SM_spring_pin.glb" id="7_xwc4e"]
+
+[node name="Lock3D" type="Node3D"]
+
+[node name="SM_keyhole2" parent="." instance=ExtResource("2_iy5ou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66565, 1.30381, 5.60542)
+
+[node name="SM_keyhole3" parent="." instance=ExtResource("2_iy5ou")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.719989, 1.30381, -3.25518)
+
+[node name="SM_pin_hole6" parent="." instance=ExtResource("6_a0bp5")]
+transform = Transform3D(-0.999999, -0.00158834, 0, 0.00158834, -0.999999, 0, 0, 0, 1, -1.88288, 3.51031, 0.552798)
+
+[node name="SM_spring_pin6" parent="." instance=ExtResource("7_xwc4e")]
+transform = Transform3D(0.0642361, -0.00158834, -0.997933, -0.000102029, -0.999999, 0.00158506, -0.997935, 0, -0.0642362, -1.65882, 3.51654, 0.735585)
+
+[node name="SM_pin_hole10" parent="." instance=ExtResource("6_a0bp5")]
+transform = Transform3D(-0.999999, -0.00158834, 0, 0.00158834, -0.999999, 0, 0, 0, 1, -1.87869, 3.51031, 1.5528)
+
+[node name="SM_spring_pin9" parent="." instance=ExtResource("7_xwc4e")]
+transform = Transform3D(0.0642361, -0.00158834, -0.997933, -0.000102029, -0.999999, 0.00158506, -0.997935, 0, -0.0642362, -1.65463, 3.51654, 1.73559)
+
+[node name="SM_pin_hole12" parent="." instance=ExtResource("6_a0bp5")]
+transform = Transform3D(-0.999999, -0.00158834, 0, 0.00158834, -0.999999, 0, 0, 0, 1, -1.87869, 3.51031, 2.5528)
+
+[node name="SM_pin_hole7" parent="." instance=ExtResource("6_a0bp5")]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, -1.8783, 3.50797, -1.4472)
+
+[node name="SM_spring_pin8" parent="." instance=ExtResource("7_xwc4e")]
+transform = Transform3D(0.0642362, -8.74228e-08, -0.997935, -5.61571e-09, -1, 8.72422e-08, -0.997935, 0, -0.0642362, -1.65424, 3.51456, -1.26441)
+
+[node name="SM_pin_hole8" parent="." instance=ExtResource("6_a0bp5")]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, -1.8783, 3.50797, -2.4472)
+
+[node name="GrooveFillers" type="Node3D" parent="."]
+
+[node name="SM_grooves_filler2" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.873051, -1.08694, 1.46221)
+
+[node name="SM_grooves_filler51" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44004, -0.974501, 3.52491)
+
+[node name="SM_grooves_filler3" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.873051, -1.08694, 0.462209)
+
+[node name="SM_grooves_filler7" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.873051, -0.752606, 0.462209)
+
+[node name="SM_grooves_filler8" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.873051, -0.752606, -0.537791)
+
+[node name="SM_grooves_filler9" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.873051, -0.752606, -1.53779)
+
+[node name="SM_grooves_filler10" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62711, 3.1748, 2.56587)
+
+[node name="SM_grooves_filler25" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83764, 3.51517, 2.56587)
+
+[node name="SM_grooves_filler26" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83764, 3.51517, 1.56587)
+
+[node name="SM_grooves_filler52" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83764, 3.51517, -2.5833)
+
+[node name="SM_grooves_filler11" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62711, 3.1748, 1.56587)
+
+[node name="SM_grooves_filler12" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62711, 3.1748, 0.565868)
+
+[node name="SM_grooves_filler13" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.650761, 0.759283, 0, -0.759283, 0.650761, 0, 0, 0, 1, -1.40474, 2.58149, 2.3343)
+
+[node name="SM_grooves_filler14" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.650761, 0.759283, 0, -0.759283, 0.650761, 0, 0, 0, 1, -1.40474, 2.58149, 1.3343)
+
+[node name="SM_grooves_filler15" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.650761, 0.759283, 0, -0.759283, 0.650761, 0, 0, 0, 1, -1.40474, 2.58149, 0.334298)
+
+[node name="SM_grooves_filler16" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.650761, 0.759283, 0, -0.759283, 0.650761, 0, 0, 0, 1, -1.40474, 2.58149, -0.655267)
+
+[node name="SM_grooves_filler17" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.650761, 0.759283, 0, -0.759283, 0.650761, 0, 0, 0, 1, -1.40474, 2.58149, -1.65527)
+
+[node name="SM_grooves_filler18" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.650761, 0.759283, 0, -0.759283, 0.650761, 0, 0, 0, 1, -1.40474, 2.58149, -2.65527)
+
+[node name="SM_grooves_filler27" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.650761, 0.759283, 0, -0.759283, 0.650761, 0, 0, 0, 1, -2.40474, -0.418508, 2.3343)
+
+[node name="SM_grooves_filler28" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.650761, 0.759283, 0, -0.759283, 0.650761, 0, 0, 0, 1, -2.40474, -0.418508, 1.3343)
+
+[node name="SM_grooves_filler29" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.650761, 0.759283, 0, -0.759283, 0.650761, 0, 0, 0, 1, -2.40474, -0.418508, 0.334298)
+
+[node name="SM_grooves_filler30" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.650761, 0.759283, 0, -0.759283, 0.650761, 0, 0, 0, 1, -2.40474, -0.418508, -0.655267)
+
+[node name="SM_grooves_filler31" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.650761, 0.759283, 0, -0.759283, 0.650761, 0, 0, 0, 1, -2.40474, -0.418508, -1.65527)
+
+[node name="SM_grooves_filler32" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.650761, 0.759283, 0, -0.759283, 0.650761, 0, 0, 0, 1, -2.40474, -0.418508, -2.65527)
+
+[node name="SM_grooves_filler36" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.33318, -0.723136, 0, -0.388741, -0.619781, 0, 0, 0, 1, 1.59526, 2.58149, -0.655267)
+
+[node name="SM_grooves_filler37" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.33318, -0.723136, 0, -0.388741, -0.619781, 0, 0, 0, 1, 1.59526, 2.58149, -1.65527)
+
+[node name="SM_grooves_filler38" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.33318, -0.723136, 0, -0.388741, -0.619781, 0, 0, 0, 1, 1.59526, 2.58149, -2.65527)
+
+[node name="SM_grooves_filler19" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(-0.486351, 0.873764, 0, -0.873764, -0.486351, 0, 0, 0, 1, 0.484909, 0.0665538, 2.3343)
+
+[node name="SM_grooves_filler33" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62711, 3.1748, 3.56587)
+
+[node name="SM_grooves_filler34" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83764, 3.51517, 3.56587)
+
+[node name="SM_grooves_filler35" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.650761, 0.759283, 0, -0.759283, 0.650761, 0, 0, 0, 1, -1.40474, 2.58149, 3.3343)
+
+[node name="SM_grooves_filler39" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.650761, 0.759283, 0, -0.759283, 0.650761, 0, 0, 0, 1, -2.40474, -0.418508, 3.3343)
+
+[node name="SM_grooves_filler40" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(-0.486351, 0.873764, 0, -0.873764, -0.486351, 0, 0, 0, 1, 0.484909, 0.0665538, 3.3343)
+
+[node name="SM_grooves_filler41" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62711, 3.1748, 4.56587)
+
+[node name="SM_grooves_filler42" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83764, 3.51517, 4.56587)
+
+[node name="SM_grooves_filler43" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.650761, 0.759283, 0, -0.759283, 0.650761, 0, 0, 0, 1, -1.40474, 2.58149, 4.3343)
+
+[node name="SM_grooves_filler44" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.650761, 0.759283, 0, -0.759283, 0.650761, 0, 0, 0, 1, -2.40474, -0.418508, 4.3343)
+
+[node name="SM_grooves_filler45" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(-0.486351, 0.873764, 0, -0.873764, -0.486351, 0, 0, 0, 1, 0.484909, 0.0665538, 4.3343)
+
+[node name="SM_grooves_filler46" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62711, 3.1748, 5.56587)
+
+[node name="SM_grooves_filler47" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83764, 3.51517, 5.56587)
+
+[node name="SM_grooves_filler48" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.650761, 0.759283, 0, -0.759283, 0.650761, 0, 0, 0, 1, -1.40474, 2.58149, 5.3343)
+
+[node name="SM_grooves_filler49" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(0.650761, 0.759283, 0, -0.759283, 0.650761, 0, 0, 0, 1, -2.40474, -0.418508, 5.3343)
+
+[node name="SM_grooves_filler50" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(-0.486351, 0.873764, 0, -0.873764, -0.486351, 0, 0, 0, 1, 0.484909, 0.0665538, 5.3343)
+
+[node name="SM_grooves_filler20" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(-0.486351, 0.873764, 0, -0.873764, -0.486351, 0, 0, 0, 1, 0.484909, 0.0665538, 1.3343)
+
+[node name="SM_grooves_filler21" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(-0.486351, 0.873764, 0, -0.873764, -0.486351, 0, 0, 0, 1, 0.484909, 0.0665538, 0.334298)
+
+[node name="SM_grooves_filler22" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(-0.486351, 0.873764, 0, -0.873764, -0.486351, 0, 0, 0, 1, 0.484909, 0.0665538, -0.655267)
+
+[node name="SM_grooves_filler23" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(-0.486351, 0.873764, 0, -0.873764, -0.486351, 0, 0, 0, 1, 0.484909, 0.0665538, -1.65527)
+
+[node name="SM_grooves_filler24" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(-0.486351, 0.873764, 0, -0.873764, -0.486351, 0, 0, 0, 1, 0.484909, 0.0665538, -2.65527)
+
+[node name="SM_grooves_filler4" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.873051, -1.08694, -0.537791)
+
+[node name="SM_grooves_filler5" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.873051, -1.08694, -1.53779)
+
+[node name="SM_grooves_filler6" parent="GrooveFillers" instance=ExtResource("1_bgcyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.873051, -1.08694, -2.53779)
+
+[node name="KeyFillers" type="Node3D" parent="."]
+
+[node name="SM_key_filler2" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -3.85764, -1.35771, 1.53459)
+
+[node name="SM_key_filler3" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -2.56292, -1.3584, 0.534586)
+
+[node name="SM_key_filler7" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -3.85764, -1.35771, 2.53459)
+
+[node name="SM_key_filler8" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -3.42646, -1.3584, 1.53459)
+
+[node name="SM_key_filler9" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -3.85764, -1.35771, 3.53459)
+
+[node name="SM_key_filler10" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -1.42646, -1.3584, 2.53459)
+
+[node name="SM_key_filler11" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -3.85764, -1.35771, 4.53459)
+
+[node name="SM_key_filler12" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -3.42646, -1.3584, 3.53459)
+
+[node name="SM_key_filler4" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -3.85764, -1.35771, -0.465414)
+
+[node name="SM_key_filler5" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -3.42646, -1.3584, -1.46541)
+
+[node name="SM_key_filler6" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -3.85764, -1.35771, -2.46541)
+
+[node name="SM_key_filler13" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -2.56292, -2.3584, 0.534586)
+
+[node name="SM_key_filler14" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -3.42646, -2.3584, 1.53459)
+
+[node name="SM_key_filler15" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -1.42646, -2.3584, 2.53459)
+
+[node name="SM_key_filler16" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -1.7384, -2.35771, 4.53459)
+
+[node name="SM_key_filler17" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -3.42646, -2.3584, 3.53459)
+
+[node name="SM_key_filler18" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -3.85764, -2.35771, -0.465414)
+
+[node name="SM_key_filler19" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -3.42646, -2.3584, -1.46541)
+
+[node name="SM_key_filler20" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -3.85764, -2.35771, -2.46541)
+
+[node name="SM_key_filler21" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -2.90816, -1.85032, 0.534586)
+
+[node name="SM_key_filler22" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -3.42646, -1.85032, 1.53459)
+
+[node name="SM_key_filler23" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -0.303994, -1.85032, 2.53459)
+
+[node name="SM_key_filler24" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -3.17915, -1.84964, 4.53459)
+
+[node name="SM_key_filler25" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -2.90896, -1.85032, 3.53459)
+
+[node name="SM_key_filler26" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -3.05229, -1.84964, -0.465414)
+
+[node name="SM_key_filler27" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999971, 0.0015882, -0.00750485, -0.00158825, 0.999999, 0, 0.00750484, 1.19196e-05, 0.999972, -2.71154, -1.85032, -1.46541)
+
+[node name="SM_key_filler28" parent="KeyFillers" instance=ExtResource("3_a5x1v")]
+transform = Transform3D(0.999999, 0.00158825, 0, -0.00158825, 0.999999, 0, 0, 0, 1, -3.85764, -1.84964, -2.46541)
+
+[node name="KeyWalls" type="Node3D" parent="."]
+
+[node name="SM_key_walls2" parent="KeyWalls" instance=ExtResource("4_x8dxt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.96482, -0.72689, 0.61386)
+
+[node name="SM_key_walls3" parent="KeyWalls" instance=ExtResource("4_x8dxt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.96482, -0.72689, -0.38614)
+
+[node name="SM_key_walls4" parent="KeyWalls" instance=ExtResource("4_x8dxt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.96482, -0.72689, -1.38614)
+
+[node name="SM_key_walls5" parent="KeyWalls" instance=ExtResource("4_x8dxt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.96482, -0.72689, -2.38614)
+
+[node name="SM_key_walls6" parent="KeyWalls" instance=ExtResource("4_x8dxt")]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -4.96482, 2.27311, 0.61386)
+
+[node name="SM_key_walls10" parent="KeyWalls" instance=ExtResource("4_x8dxt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.96482, -0.72689, 1.61386)
+
+[node name="SM_key_walls11" parent="KeyWalls" instance=ExtResource("4_x8dxt")]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -4.96482, 2.27311, 1.61386)
+
+[node name="SM_key_walls12" parent="KeyWalls" instance=ExtResource("4_x8dxt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.96482, -0.72689, 2.61386)
+
+[node name="SM_key_walls13" parent="KeyWalls" instance=ExtResource("4_x8dxt")]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -4.96482, 2.27311, 2.61386)
+
+[node name="SM_key_walls14" parent="KeyWalls" instance=ExtResource("4_x8dxt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.96482, -0.72689, 3.61386)
+
+[node name="SM_key_walls15" parent="KeyWalls" instance=ExtResource("4_x8dxt")]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -4.96482, 2.27311, 3.61386)
+
+[node name="SM_key_walls7" parent="KeyWalls" instance=ExtResource("4_x8dxt")]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -4.96482, 2.27311, -0.38614)
+
+[node name="SM_key_walls8" parent="KeyWalls" instance=ExtResource("4_x8dxt")]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -4.96482, 2.27311, -1.38614)
+
+[node name="SM_key_walls9" parent="KeyWalls" instance=ExtResource("4_x8dxt")]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -4.96482, 2.27311, -2.38614)
+
+[node name="OuterDoorBlockouts" type="Node3D" parent="."]
+
+[node name="SM_outter_door_blockout2" parent="OuterDoorBlockouts" instance=ExtResource("5_hsgym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 5.35267)
+
+[node name="SM_outter_door_blockout3" parent="OuterDoorBlockouts" instance=ExtResource("5_hsgym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -2.97563)
+
+[node name="SM_outter_door_blockout4" parent="OuterDoorBlockouts" instance=ExtResource("5_hsgym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99602, 2, -3.74873)
+
+[node name="SM_outter_door_blockout5" parent="OuterDoorBlockouts" instance=ExtResource("5_hsgym")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.5897, 2, -3.77844)
+
+[node name="SM_outter_door_blockout6" parent="OuterDoorBlockouts" instance=ExtResource("5_hsgym")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.62966, 2, -4.55153)

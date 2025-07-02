@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxxd7ard1ls5b"]
+
+[ext_resource type="PackedScene" uid="uid://y2vjdurag4ao" path="res://Scenes/lock_3D.tscn" id="1_uak7k"]
+
+[node name="LockView3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.546994, -0.216667, 0.808612, 7.45058e-09, 0.965926, 0.258819, -0.837137, -0.141572, 0.528355, 8.27097, 4.96636, 6.04253)
+
+[node name="Lock3D" parent="." instance=ExtResource("1_uak7k")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.55415, 10, 0)
+light_energy = 5.0
+sky_mode = 1
