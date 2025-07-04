@@ -18,7 +18,7 @@ albedo_color = Color(0.262932, 0.262933, 0.262932, 1)
 [node name="House" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10.1582, 1.80256)
+transform = Transform3D(1, 0, 0, 0, 0.279477, 0.960152, 0, -0.960152, 0.279477, 0.0654755, 8.76146, 5.36644)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0982647, -0.503533, 1.97404)
@@ -71,4 +71,4 @@ camera_attributes = SubResource("CameraAttributesPractical_iqtyj")
 compositor = SubResource("Compositor_xi0mm")
 
 [node name="NPC" parent="." instance=ExtResource("1_okrnj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74017, 1.82595)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02133, 1.82595)
