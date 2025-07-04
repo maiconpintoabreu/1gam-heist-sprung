@@ -1,14 +1,17 @@
 [gd_scene load_steps=8 format=3 uid="uid://y2vjdurag4ao"]
 
 [ext_resource type="PackedScene" uid="uid://c7amnpxffemsu" path="res://Assets/LockParts/SM_grooves_filler.glb" id="1_bgcyw"]
+[ext_resource type="Script" uid="uid://7tqsinkobqbp" path="res://Scripts/lock_3d.gd" id="1_f854g"]
 [ext_resource type="PackedScene" uid="uid://d4b1bhgqsywih" path="res://Assets/LockParts/SM_keyhole.glb" id="2_iy5ou"]
 [ext_resource type="PackedScene" uid="uid://cc1rtlwraexdv" path="res://Assets/LockParts/SM_key_filler.glb" id="3_a5x1v"]
+[ext_resource type="PackedScene" uid="uid://ch48bqpaua471" path="res://Scenes/pin_3d.tscn" id="4_88sx6"]
 [ext_resource type="PackedScene" uid="uid://b5m5pvah1xlci" path="res://Assets/LockParts/SM_key_walls.glb" id="4_x8dxt"]
 [ext_resource type="PackedScene" uid="uid://dne8h6xbwm8bw" path="res://Assets/LockParts/SM_outter_door_blockout.glb" id="5_hsgym"]
-[ext_resource type="PackedScene" uid="uid://dbugqe16ojv6k" path="res://Assets/LockParts/SM_pin_hole.glb" id="6_a0bp5"]
-[ext_resource type="PackedScene" uid="uid://db8gvvdv64qj0" path="res://Assets/LockParts/SM_spring_pin.glb" id="7_xwc4e"]
 
 [node name="Lock3D" type="Node3D"]
+script = ExtResource("1_f854g")
+mouse_sensitivity = 0.05
+pin_switch_threshold = null
 
 [node name="SM_keyhole2" parent="." instance=ExtResource("2_iy5ou")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66565, 1.30381, 5.60542)
@@ -16,29 +19,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66565, 1.30381, 5.60542)
 [node name="SM_keyhole3" parent="." instance=ExtResource("2_iy5ou")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.719989, 1.30381, -3.25518)
 
-[node name="SM_pin_hole6" parent="." instance=ExtResource("6_a0bp5")]
-transform = Transform3D(-0.999999, -0.00158834, 0, 0.00158834, -0.999999, 0, 0, 0, 1, -1.88288, 3.51031, 0.552798)
+[node name="Pin3D" parent="." instance=ExtResource("4_88sx6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 1.6344, -1.23079)
 
-[node name="SM_spring_pin6" parent="." instance=ExtResource("7_xwc4e")]
-transform = Transform3D(0.0642361, -0.00158834, -0.997933, -0.000102029, -0.999999, 0.00158506, -0.997935, 0, -0.0642362, -1.65882, 3.51654, 0.735585)
+[node name="Pin3D2" parent="." instance=ExtResource("4_88sx6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 1.6344, -0.048337)
 
-[node name="SM_pin_hole10" parent="." instance=ExtResource("6_a0bp5")]
-transform = Transform3D(-0.999999, -0.00158834, 0, 0.00158834, -0.999999, 0, 0, 0, 1, -1.87869, 3.51031, 1.5528)
+[node name="Pin3D3" parent="." instance=ExtResource("4_88sx6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 1.6344, 1.1915)
 
-[node name="SM_spring_pin9" parent="." instance=ExtResource("7_xwc4e")]
-transform = Transform3D(0.0642361, -0.00158834, -0.997933, -0.000102029, -0.999999, 0.00158506, -0.997935, 0, -0.0642362, -1.65463, 3.51654, 1.73559)
-
-[node name="SM_pin_hole12" parent="." instance=ExtResource("6_a0bp5")]
-transform = Transform3D(-0.999999, -0.00158834, 0, 0.00158834, -0.999999, 0, 0, 0, 1, -1.87869, 3.51031, 2.5528)
-
-[node name="SM_pin_hole7" parent="." instance=ExtResource("6_a0bp5")]
-transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, -1.8783, 3.50797, -1.4472)
-
-[node name="SM_spring_pin8" parent="." instance=ExtResource("7_xwc4e")]
-transform = Transform3D(0.0642362, -8.74228e-08, -0.997935, -5.61571e-09, -1, 8.72422e-08, -0.997935, 0, -0.0642362, -1.65424, 3.51456, -1.26441)
-
-[node name="SM_pin_hole8" parent="." instance=ExtResource("6_a0bp5")]
-transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, -1.8783, 3.50797, -2.4472)
+[node name="Pin3D4" parent="." instance=ExtResource("4_88sx6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 1.6344, 2.50886)
 
 [node name="GrooveFillers" type="Node3D" parent="."]
 
