@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://ch48bqpaua471"]
+
+[ext_resource type="Script" uid="uid://c0xni3ny8hoh3" path="res://Scripts/pin_3d.gd" id="1_42gu3"]
+[ext_resource type="PackedScene" uid="uid://db8gvvdv64qj0" path="res://Assets/LockParts/SM_spring_pin.glb" id="1_qt4vs"]
+[ext_resource type="PackedScene" uid="uid://dbugqe16ojv6k" path="res://Assets/LockParts/SM_pin_hole.glb" id="2_42gu3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_woikx"]
+size = Vector3(1, 0.0205078, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qt4vs"]
+size = Vector3(1, 0.106995, 1)
+
+[node name="Pin3D" type="Node3D"]
+script = ExtResource("1_42gu3")
+
+[node name="SpringPin" type="Node3D" parent="."]
+
+[node name="SM_spring_pin2" parent="SpringPin" instance=ExtResource("1_qt4vs")]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0, 1.83159, 0)
+
+[node name="SpringCollision" type="Area3D" parent="SpringPin/SM_spring_pin2"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -1.69241e-07, 1.93589, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpringPin/SM_spring_pin2/SpringCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00427297, 0)
+shape = SubResource("BoxShape3D_woikx")
+
+[node name="PinHole" type="Node3D" parent="."]
+
+[node name="SM_pin_hole2" parent="PinHole" instance=ExtResource("2_42gu3")]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0, 1.90305, 0)
+
+[node name="PinHoleDetection" type="Area3D" parent="PinHole"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0730868, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PinHole/PinHoleDetection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0135657, 0)
+shape = SubResource("BoxShape3D_qt4vs")
+
+[connection signal="area_entered" from="PinHole/PinHoleDetection" to="." method="_on_pin_hole_detection_area_entered"]
+[connection signal="area_exited" from="PinHole/PinHoleDetection" to="." method="_on_pin_hole_detection_area_exited"]
