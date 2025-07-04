@@ -3,7 +3,6 @@ extends CharacterBody3D
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @export var speed: float = 1.0
 
-
 func _on_nav_timer_timeout() -> void:
 	var random_position := Vector3(randf_range(-5.0, 5.0), 0, randf_range(-5.0, 5.0))
 	navigation_agent_3d.target_position = random_position
