@@ -1,14 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://du2bmak3jhovq"]
+[gd_scene load_steps=5 format=3 uid="uid://du2bmak3jhovq"]
 
 [ext_resource type="Script" uid="uid://dmpfsdkwf2jkg" path="res://Scripts/npc.gd" id="1_acqhf"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_acqhf"]
+albedo_color = Color(0.79783, 2.64719e-06, 1.15514e-06, 1)
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_b0k6i"]
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_acqhf"]
+points = PackedVector3Array(0, 0, 0, -5, 5, 0, 5, 5, 0)
+
+[node name="NPC" type="CharacterBody3D"]
 script = ExtResource("1_acqhf")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+material = SubResource("StandardMaterial3D_acqhf")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCylinder3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00201416, 0.69862, 0.432539)
@@ -28,6 +35,12 @@ one_shot = true
 
 [node name="LookAroundTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -0.0140669, 0.999901, 0, -0.999901, -0.0140669, 0, 0.549928, -0.64046)
+shape = SubResource("ConvexPolygonShape3D_acqhf")
 
 [connection signal="timeout" from="NavTimer" to="." method="_on_nav_timer_timeout"]
 [connection signal="timeout" from="LookAroundTimer" to="." method="_on_look_around_timer_timeout"]

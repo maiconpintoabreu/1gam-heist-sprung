@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 func look_around(delta: float) -> void:
 	#Check if between acceptable value
 	if target_rotation_angle +.01 < rotation.y or target_rotation_angle -.01 > rotation.y:
-		rotation.y = lerp_angle(rotation.y, target_rotation_angle, 1 * delta);
+		rotation.y = lerp_angle(rotation.y, target_rotation_angle, 1 * delta)
 	elif look_around_timer.is_stopped() and nav_timer.is_stopped():
 		nav_timer.start(1)
 
