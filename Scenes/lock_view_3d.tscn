@@ -5,13 +5,13 @@
 [node name="LockView3D" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.650244, -0.196631, 0.733838, -2.03554e-08, 0.965926, 0.258819, -0.759726, -0.168296, 0.628087, 6.0855, 4.96636, 6.70984)
-fov = 90.0
+transform = Transform3D(0.346936, -0.242744, 0.905931, 0, 0.965926, 0.258819, -0.937889, -0.0897936, 0.335114, 8.96759, 4.96636, 3.28809)
 
 [node name="Lock3D" parent="." instance=ExtResource("1_uak7k")]
 pin_switch_threshold = 100.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.55415, 10, 0)
-light_energy = 5.0
+transform = Transform3D(-0.000150877, -0.707107, 0.707107, 0.619889, 0.554793, 0.554926, -0.78469, 0.438411, 0.438244, 6.55415, 10, 4.90822)
+rotation_edit_mode = 1
+light_energy = 2.0
 sky_mode = 1

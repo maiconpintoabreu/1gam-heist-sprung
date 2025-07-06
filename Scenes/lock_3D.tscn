@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://y2vjdurag4ao"]
+[gd_scene load_steps=9 format=3 uid="uid://y2vjdurag4ao"]
 
 [ext_resource type="PackedScene" uid="uid://c7amnpxffemsu" path="res://Assets/LockParts/SM_grooves_filler.glb" id="1_bgcyw"]
 [ext_resource type="Script" uid="uid://7tqsinkobqbp" path="res://Scripts/lock_3d.gd" id="1_f854g"]
@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://ch48bqpaua471" path="res://Scenes/pin_3d.tscn" id="4_88sx6"]
 [ext_resource type="PackedScene" uid="uid://b5m5pvah1xlci" path="res://Assets/LockParts/SM_key_walls.glb" id="4_x8dxt"]
 [ext_resource type="PackedScene" uid="uid://dne8h6xbwm8bw" path="res://Assets/LockParts/SM_outter_door_blockout.glb" id="5_hsgym"]
+[ext_resource type="PackedScene" uid="uid://ccfbe0ur62m62" path="res://Scenes/lock_pick_tool.tscn" id="8_88sx6"]
 
 [node name="Lock3D" type="Node3D"]
 script = ExtResource("1_f854g")
 mouse_sensitivity = 0.05
-pin_switch_threshold = null
 
 [node name="SM_keyhole2" parent="." instance=ExtResource("2_iy5ou")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66565, 1.30381, 5.60542)
@@ -329,3 +329,8 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.5897
 
 [node name="SM_outter_door_blockout6" parent="OuterDoorBlockouts" instance=ExtResource("5_hsgym")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.62966, 2, -4.55153)
+
+[node name="LockPickTool" parent="." instance=ExtResource("8_88sx6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69979, 0.782994, 3.57904)
+movement_sensitivity = 0.2
+max_force = 100.0

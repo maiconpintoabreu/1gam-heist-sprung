@@ -26,7 +26,10 @@ click={
 [layer_names]
 
 2d_physics/layer_1="pin_parts"
+3d_physics/layer_1="Tools"
 2d_physics/layer_2="lock_zones"
+3d_physics/layer_2="Pins"
+3d_physics/layer_3="Lock Parts"
 
 [rendering]
 
