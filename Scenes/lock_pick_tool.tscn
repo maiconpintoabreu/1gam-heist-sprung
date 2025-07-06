@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccfbe0ur62m62"]
+
+[ext_resource type="Script" uid="uid://c0emana2mjqun" path="res://Scripts/lock_pick_tool.gd" id="1_geqwi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sk7ms"]
+size = Vector3(0.2, 0.2, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_at7o2"]
+size = Vector3(0.199081, 0.214372, 0.144388)
+
+[node name="LockPickTool" type="RigidBody3D"]
+collision_mask = 2
+axis_lock_linear_x = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+mass = 0.1
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+linear_damp = 5.0
+angular_damp = 10.0
+script = ExtResource("1_geqwi")
+
+[node name="ToolCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_sk7ms")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(0.2, 0.2, 6)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.195977, -2.92557)
+size = Vector3(0.2, 0.2, 0.144)
+
+[node name="ToolTip" type="RigidBody3D" parent="."]
+collision_layer = 3
+collision_mask = 2
+mass = 0.1
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ToolTip"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00320899, 0.20171, -2.92576)
+shape = SubResource("BoxShape3D_at7o2")
