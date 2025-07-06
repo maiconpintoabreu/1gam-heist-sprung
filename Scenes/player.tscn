@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgbv576wetyhr"]
+
+[ext_resource type="Script" uid="uid://ca3pibpqid4mg" path="res://Scripts/player.gd" id="1_v0iea"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0iea"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_b0k6i"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_v0iea")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+material = SubResource("StandardMaterial3D_v0iea")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00201416, 0.69862, 0.432539)
+size = Vector3(0.542847, 0.433105, 0.455566)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_b0k6i")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
