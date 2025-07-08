@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://hvltfjw7gdec"]
+[gd_scene load_steps=11 format=3 uid="uid://hvltfjw7gdec"]
 
 [ext_resource type="Script" uid="uid://cc1gv5jk3stmh" path="res://Scripts/camera.gd" id="1_3jr7h"]
 [ext_resource type="PackedScene" uid="uid://du2bmak3jhovq" path="res://Scenes/npc.tscn" id="1_okrnj"]
@@ -16,6 +16,9 @@ geometry_parsed_geometry_type = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7p874"]
 albedo_color = Color(0.262932, 0.262933, 0.262932, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3jr7h"]
+albedo_color = Color(0.641934, 0.641934, 0.641934, 1)
 
 [sub_resource type="Environment" id="Environment_3jr7h"]
 
@@ -64,27 +67,27 @@ material = SubResource("StandardMaterial3D_7p874")
 [node name="CSGBox3D3" type="CSGBox3D" parent="InsideRegion"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00372219, 0.973145, -5.35656)
 size = Vector3(10, 2.94629, 0.730469)
-material = SubResource("StandardMaterial3D_7p874")
+material = SubResource("StandardMaterial3D_3jr7h")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="InsideRegion"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00372219, 0.973145, 5.35811)
 size = Vector3(10, 2.94629, 0.730469)
-material = SubResource("StandardMaterial3D_7p874")
+material = SubResource("StandardMaterial3D_3jr7h")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="InsideRegion"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.36106, 0.973145, -0.0121012)
-size = Vector3(11.4027, 2.94629, 0.730469)
-material = SubResource("StandardMaterial3D_7p874")
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.36106, 0.973145, 0.00514364)
+size = Vector3(11.4372, 2.94629, 0.730469)
+material = SubResource("StandardMaterial3D_3jr7h")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="InsideRegion"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.35361, 0.973145, -1.68805)
-size = Vector3(8.04056, 2.94629, 0.730469)
-material = SubResource("StandardMaterial3D_7p874")
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.35361, 0.973145, -1.69354)
+size = Vector3(8.05153, 2.94629, 0.730469)
+material = SubResource("StandardMaterial3D_3jr7h")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="InsideRegion"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.35361, 0.973145, 5.11986)
 size = Vector3(1.20364, 2.94629, 0.730469)
-material = SubResource("StandardMaterial3D_7p874")
+material = SubResource("StandardMaterial3D_3jr7h")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.0105626, 0.999254, 0.0371419, 0.569983, -0.0245021, 0.821291, 0.821589, 0.0298452, -0.569299, -1.2172, 13.6812, 0.89975)
