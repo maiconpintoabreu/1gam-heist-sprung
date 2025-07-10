@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0lysq6jxo3v1"]
+
+[ext_resource type="Script" uid="uid://dhjd6bl6el0r5" path="res://Scenes/door.gd" id="1_w6aom"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7j2x"]
+albedo_color = Color(0.32549, 0.176471, 0.137255, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h7j2x"]
+material = SubResource("StandardMaterial3D_h7j2x")
+size = Vector3(0.5, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h7j2x"]
+size = Vector3(0.505432, 1, 0.0569458)
+
+[node name="Door" type="RigidBody3D" groups=["interactables"]]
+collision_layer = 8
+collision_mask = 8
+mass = 0.001
+gravity_scale = 0.0
+script = ExtResource("1_w6aom")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+mesh = SubResource("BoxMesh_h7j2x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -0.00161743, 0, -0.000274658)
+shape = SubResource("BoxShape3D_h7j2x")
+
+[node name="PromptLabel" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 2.20409, -0.00859594)
+visible = false
+text = "Press E to Interact"
+font_size = 64
+outline_size = 16

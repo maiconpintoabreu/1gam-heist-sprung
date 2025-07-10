@@ -16,7 +16,6 @@ var pin_selection_mode: bool = false
 var tool_mode: bool = true
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	collect_pins()
 	connect_pin_signals()
 	

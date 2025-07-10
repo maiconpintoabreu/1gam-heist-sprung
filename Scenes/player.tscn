@@ -7,6 +7,8 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_b0k6i"]
 
 [node name="Player" type="CharacterBody3D"]
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_v0iea")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
@@ -26,3 +28,10 @@ navigation_layers = 3
 debug_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, 4)
+collision_mask = 8
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="."]
+remote_path = NodePath("../RayCast3D")

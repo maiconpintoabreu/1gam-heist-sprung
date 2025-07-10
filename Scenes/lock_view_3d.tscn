@@ -1,13 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxxd7ard1ls5b"]
+[gd_scene load_steps=3 format=3 uid="uid://dxxd7ard1ls5b"]
 
 [ext_resource type="PackedScene" uid="uid://y2vjdurag4ao" path="res://Scenes/lock_3D.tscn" id="1_uak7k"]
+
+[sub_resource type="Environment" id="Environment_uak7k"]
+background_mode = 1
+background_color = Color(0.168627, 0.168627, 0.207843, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.747424, 0.804619, 0.975987, 1)
 
 [node name="LockView3D" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.346936, -0.242744, 0.905931, 0, 0.965926, 0.258819, -0.937889, -0.0897936, 0.335114, 8.96759, 4.96636, 3.28809)
+transform = Transform3D(0.346936, -0.242744, 0.905931, 0, 0.965926, 0.25882, -0.937889, -0.0897938, 0.335114, 222.506, 191.805, 0.201902)
+environment = SubResource("Environment_uak7k")
+current = true
 
 [node name="Lock3D" parent="." instance=ExtResource("1_uak7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 213.539, 186.838, -3.0862)
 pin_switch_threshold = 100.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
