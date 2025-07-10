@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://hvltfjw7gdec"]
+[gd_scene load_steps=12 format=3 uid="uid://hvltfjw7gdec"]
 
 [ext_resource type="Script" uid="uid://cc1gv5jk3stmh" path="res://Scripts/camera.gd" id="1_3jr7h"]
 [ext_resource type="PackedScene" uid="uid://du2bmak3jhovq" path="res://Scenes/npc.tscn" id="1_okrnj"]
 [ext_resource type="PackedScene" uid="uid://cgbv576wetyhr" path="res://Scenes/player.tscn" id="2_n87ef"]
+[ext_resource type="PackedScene" uid="uid://d0lysq6jxo3v1" path="res://Scenes/door.tscn" id="5_xi0mm"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_3jr7h"]
 vertices = PackedVector3Array(0.211375, 1, 0.390457, 0.211375, 1, 1.64046, 4.71138, 1, 1.64046, 4.71138, 1, 0.390457)
@@ -106,3 +107,17 @@ nav_mesh = NodePath("../InsideRegion")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.999569, 0.0293522, 0, -0.0293522, 0.999569, -8.66446, 1.01984, -1.31711)
 speed = 2.0
+
+[node name="LockViewContainer" type="SubViewportContainer" parent="." groups=["lock_ui"]]
+visible = false
+offset_left = 451.0
+offset_top = 100.0
+offset_right = 707.0
+offset_bottom = 356.0
+
+[node name="SubViewport" type="SubViewport" parent="LockViewContainer"]
+handle_input_locally = false
+render_target_update_mode = 0
+
+[node name="Door" parent="." instance=ExtResource("5_xi0mm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.45503, 2.13081, -1.49329)

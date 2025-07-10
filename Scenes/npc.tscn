@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dmpfsdkwf2jkg" path="res://Scripts/npc.gd" id="1_acqhf"]
 [ext_resource type="Material" uid="uid://bdu3fe6xepe0c" path="res://Scenes/red.tres" id="2_h1ryf"]
 [ext_resource type="Material" uid="uid://doljanxxpngjd" path="res://Scenes/blue.tres" id="3_1ig1v"]
-[ext_resource type="Shader" uid="uid://cqo3upj1kwmwf" path="res://Scenes/vision.gdshader" id="4_h1ryf"]
+[ext_resource type="Shader" path="res://Scenes/vision.gdshader" id="4_h1ryf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ig1v"]
 render_priority = 0
@@ -19,6 +19,8 @@ points = PackedVector3Array(0, 0, 0, 0, 0, 0, -2, 4, 0, 2, 4, 0)
 radius = 0.896484
 
 [node name="NPC" type="CharacterBody3D"]
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_acqhf")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
@@ -55,6 +57,8 @@ one_shot = true
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+collision_layer = 8
+collision_mask = 8
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
