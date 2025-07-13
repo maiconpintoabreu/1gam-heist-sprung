@@ -122,6 +122,10 @@ render_target_update_mode = 0
 
 [node name="Door" parent="." instance=ExtResource("5_xi0mm")]
 transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, -5.182, 1.96463, -2.35306)
+object_name = null
+is_locked = null
+lock_pins = null
+lock_difficulty = null
 
 [node name="Window" parent="." instance=ExtResource("5_bu6dc")]
 transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, -1.35012, 1.31711, -1.43656)

@@ -1,14 +1,14 @@
 extends LockableObject
-class_name Door
+class_name WindowObject
 
 # Door-specific behavior can be added here
 func _ready():
 	# Set door-specific defaults
-	object_name = "Door"
+	object_name = "Window"
 
 # Override this for door-specific unlock behavior
 func _trigger_unlock_behavior():
-	print("Door is opening...")
+	print("Window is opening...")
 	
 	# Play door-specific opening animation
 	if animation_player and animation_player.has_animation("door_opening"):
