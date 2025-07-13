@@ -125,3 +125,6 @@ transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, -5.182
 
 [node name="Window" parent="." instance=ExtResource("5_bu6dc")]
 transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, -1.35012, 1.31711, -1.43656)
+is_locked = true
+lock_pins = 4
+lock_difficulty = 1.0

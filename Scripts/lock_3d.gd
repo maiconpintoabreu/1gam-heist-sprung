@@ -1,6 +1,8 @@
 extends Node3D
 class_name Lock3D
 
+signal lock_opened
+
 # Editor-assigned reference - add LockPickTool as child in editor!
 @onready var lock_pick_tool: LockPickTool = $LockPickTool
 
@@ -19,8 +21,6 @@ func _ready():
 	collect_pins()
 	connect_pin_signals()
 	
-	if pins.size() > 0:
-		select_pin(0)
 	
 	# Verify tool exists (set up in editor)
 	if lock_pick_tool:
@@ -64,7 +64,6 @@ func handle_tool_movement(event: InputEventMouseMotion):
 		accumulated_x_movement += -event.relative.x
 		if abs(accumulated_x_movement) >= pin_switch_threshold:
 			var direction = sign(accumulated_x_movement)
-			switch_pin(direction)
 			accumulated_x_movement = 0.0
 	else:
 		var movement_input = Vector2(-event.relative.x, -event.relative.y) * mouse_sensitivity
@@ -75,34 +74,12 @@ func handle_direct_pin_movement(event: InputEventMouseMotion):
 		accumulated_x_movement += -event.relative.x
 		if abs(accumulated_x_movement) >= pin_switch_threshold:
 			var direction = sign(accumulated_x_movement)
-			switch_pin(direction)
 			accumulated_x_movement = 0.0
 	else:
 		if selected_pin:
 			selected_pin.move_pin(-event.relative.y * mouse_sensitivity)
 
-func switch_pin(direction: int):
-	if pins.size() <= 1:
-		return
-	
-	var new_index = selected_pin_index + direction
-	new_index = clamp(new_index, 0, pins.size() - 1)
-	
-	if new_index != selected_pin_index:
-		select_pin(new_index)
 
-func select_pin(index: int):
-	if index < 0 or index >= pins.size():
-		return
-	
-	if selected_pin:
-		selected_pin.set_selected(false)
-	
-	selected_pin_index = index
-	selected_pin = pins[index]
-	selected_pin.set_selected(true)
-	
-	print("Selected pin: ", selected_pin.name)
 
 func check_lock_status():
 	var unlocked_count = 0
@@ -114,6 +91,8 @@ func check_lock_status():
 	
 	if unlocked_count == pins.size():
 		print("🔓 LOCK OPENED! 🔓")
+		# EMIT THE SIGNAL when lock is successfully opened
+		lock_opened.emit()
 		return true
 	return false
 

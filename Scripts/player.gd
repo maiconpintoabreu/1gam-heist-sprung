@@ -39,7 +39,6 @@ func check_for_interactables():
 	var hit_object = null
 	if ray_cast_3d.is_colliding():
 		hit_object = ray_cast_3d.get_collider()
-	
 	# If we're looking at something different
 	if hit_object != current_interactable:
 		# Hide prompt from old object

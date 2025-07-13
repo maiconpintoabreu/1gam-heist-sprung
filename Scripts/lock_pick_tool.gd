@@ -5,10 +5,6 @@ class_name LockPickTool
 @export var movement_sensitivity: float = 0.1
 @export var max_force: float = 50.0
 
-# Editor-assigned references - no more creating nodes in code!
-@onready var tool_mesh: CSGBox3D = $ToolMesh
-@onready var tool_collision: CollisionShape3D = $ToolCollision
-@onready var tool_tip: RigidBody3D = $ToolTip
 
 var original_position: Vector3
 var input_accumulator: Vector2 = Vector2.ZERO
