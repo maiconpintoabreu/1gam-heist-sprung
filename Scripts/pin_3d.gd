@@ -8,6 +8,7 @@ signal pin_state_changed
 @onready var pin_hole: Node3D = $PinHole
 @onready var pin_hole_detection: Area3D = $PinHole/PinHoleDetection
 @onready var spring_model: Node3D = $SpringPin/SM_spring_pin2
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 # Export variables - all configurable in editor
 @export var spring_force_strength: float = 20.0  # How hard spring pulls back to rest
@@ -65,6 +66,7 @@ func _on_pin_hole_detection_body_entered(body: RigidBody3D) -> void:
 	if body == spring_pin:
 		is_in_sweet_spot = true
 		print(name + ": Entered Sweet Spot!")
+		audio_stream_player.play()
 		pin_state_changed.emit()
 
 func _on_pin_hole_detection_body_exited(body: RigidBody3D) -> void:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0lysq6jxo3v1"]
+[gd_scene load_steps=10 format=3 uid="uid://d0lysq6jxo3v1"]
 
 [ext_resource type="Script" uid="uid://dhjd6bl6el0r5" path="res://Scripts/door.gd" id="1_w6aom"]
 [ext_resource type="PackedScene" uid="uid://dxxd7ard1ls5b" path="res://Scenes/lock_view_3d.tscn" id="2_p0e35"]
+[ext_resource type="AudioStream" uid="uid://c7cjsocw2jtde" path="res://Assets/door_opening.wav" id="3_fahql"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7j2x"]
 albedo_color = Color(0.32549, 0.176471, 0.137255, 1)
@@ -81,3 +82,8 @@ outline_size = 16
 libraries = {
 &"": SubResource("AnimationLibrary_fahql")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fahql")
+volume_db = 5.0
+pitch_scale = 1.4

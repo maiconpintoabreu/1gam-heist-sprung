@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ch48bqpaua471"]
+[gd_scene load_steps=9 format=3 uid="uid://ch48bqpaua471"]
 
 [ext_resource type="Script" uid="uid://c0xni3ny8hoh3" path="res://Scripts/pin_3d.gd" id="1_42gu3"]
 [ext_resource type="PackedScene" uid="uid://db8gvvdv64qj0" path="res://Assets/LockParts/SM_spring_pin.glb" id="1_qt4vs"]
 [ext_resource type="PackedScene" uid="uid://dbugqe16ojv6k" path="res://Assets/LockParts/SM_pin_hole.glb" id="2_42gu3"]
+[ext_resource type="AudioStream" uid="uid://8nuk0abx1fg2" path="res://Assets/lock_click.mp3" id="4_woikx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_42gu3"]
 friction = 0.15
@@ -57,6 +58,10 @@ shape = SubResource("BoxShape3D_qt4vs")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PinHole"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76649, 0.00989938)
 shape = SubResource("BoxShape3D_42gu3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_woikx")
+pitch_scale = 0.7
 
 [connection signal="body_entered" from="SpringPin" to="." method="_on_spring_pin_body_entered"]
 [connection signal="body_exited" from="SpringPin" to="." method="_on_spring_pin_body_exited"]
