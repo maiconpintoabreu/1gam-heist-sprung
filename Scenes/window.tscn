@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dn1e83umbo351"]
+[gd_scene load_steps=9 format=3 uid="uid://dn1e83umbo351"]
 
 [ext_resource type="Script" uid="uid://dffphfdwp1sce" path="res://Scripts/window.gd" id="1_efths"]
+[ext_resource type="PackedScene" uid="uid://dxxd7ard1ls5b" path="res://Scenes/lock_view_3d.tscn" id="2_0xhjo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xhjo"]
 transparency = 1
@@ -62,6 +63,7 @@ mass = 0.001
 gravity_scale = 0.0
 script = ExtResource("1_efths")
 object_name = "Window"
+lock_scene = ExtResource("2_0xhjo")
 metadata/_custom_type_script = "uid://dp2e1q24my3o2"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

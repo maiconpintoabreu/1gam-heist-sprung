@@ -1,5 +1,5 @@
 extends LockableObject
-class_name WindowObject
+class_name WindowTest
 
 # Door-specific behavior can be added here
 func _ready():
