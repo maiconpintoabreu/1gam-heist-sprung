@@ -1,4 +1,13 @@
-[gd_scene format=3 uid="uid://bk3oa0y73ll15"]
+[gd_scene load_steps=3 format=3 uid="uid://bk3oa0y73ll15"]
+
+[ext_resource type="Script" uid="uid://bwyp53hynhbal" path="res://Scripts/start_menu.gd" id="1_juhg0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8dijm"]
+font_size = 48
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 17
+shadow_color = Color(0.0885598, 0.08856, 0.0885599, 1)
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -7,3 +16,49 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_juhg0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.227451, 0.152941, 0.203922, 1)
+
+[node name="MenuContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.5
+offset_top = -162.0
+offset_right = 144.5
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameTitle" type="Label" parent="MenuContainer"]
+layout_mode = 2
+text = "Look Around"
+label_settings = SubResource("LabelSettings_8dijm")
+
+[node name="Control" type="Control" parent="MenuContainer"]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="MenuContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Control2" type="Control" parent="MenuContainer"]
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="MenuContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="MenuContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MenuContainer/QuitButton" to="." method="_on_quit_button_pressed"]
