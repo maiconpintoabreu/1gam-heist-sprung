@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://2a2ob6grjgb3"]
+
+[ext_resource type="PackedScene" uid="uid://wng12uuntbtj" path="res://Assets/house/export_mesh/SM_blinds.glb" id="1_j1tlu"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p5av2"]
+points = PackedVector3Array(0.562127, 0.0296695, 0.02132, 0.562788, -0.283016, 0.00987016, 0.562898, -0.288713, -8.42549e-05, 0.562127, 0.0296695, -0.021326, -0.562237, 0.0296695, 0.02132, 0.560805, -0.334479, 0.0393043, 0.562127, -0.57381, 0.0404551, 0.562127, -0.58514, 0.0388296, 0.562127, -0.598581, 0.0367555, 0.562127, -0.624249, 0.0327699, 0.562127, -0.615864, -0.0259683, -0.560915, -0.261253, -0.024902, -0.562237, 0.0296695, -0.021326, -0.562898, -0.307083, 0.0144865, -0.562237, -0.57381, 0.0404551, -0.562237, -0.58514, 0.0388296, -0.562237, -0.598581, 0.0367555, -0.562237, -0.624249, 0.0327699, -0.562237, -0.615864, -0.0259683, -0.562898, -0.312716, 0.0045321)
+
+[node name="SM_blinds2" instance=ExtResource("1_j1tlu")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SM_blinds" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SM_blinds/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_p5av2")

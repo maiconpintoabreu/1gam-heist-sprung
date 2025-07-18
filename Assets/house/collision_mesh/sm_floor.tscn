@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4ifpety4gtud"]
+
+[ext_resource type="PackedScene" uid="uid://c860x5hdhihws" path="res://Assets/house/export_mesh/SM_Floor.glb" id="1_l7cls"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_j1er8"]
+points = PackedVector3Array(-1, -0.0233287, -1, -1, 0.0233242, -1, 1, -0.0233287, -1, -1, -0.0233287, 1, -1, 0.0233287, 1, 1, 0.0233242, -1, 1, -0.0233287, 1, 1, 0.0233287, 1)
+
+[node name="SM_Floor" instance=ExtResource("1_l7cls")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SM_floor" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SM_floor/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_j1er8")
