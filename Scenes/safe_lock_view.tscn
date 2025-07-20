@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cg2pf5r7inr0o"]
+[gd_scene load_steps=2 format=3 uid="uid://cj3i1sq3v0irm"]
 
-[ext_resource type="PackedScene" uid="uid://dqmyq7bf7lpa7" path="res://Scenes/lock_3d_door.tscn" id="1_etlvv"]
+[ext_resource type="PackedScene" uid="uid://dqmyq7bf7lpa7" path="res://Scenes/lock_3d_door.tscn" id="1_brnvp"]
 
-[node name="EntranceLockDoorView" type="Node3D"]
+[node name="SafeLockView" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.000150877, -0.707107, 0.707107, 0.619889, 0.554793, 0.554926, -0.78469, 0.438411, 0.438244, 6.55415, 470.634, 4.90822)
@@ -10,8 +10,9 @@ rotation_edit_mode = 1
 light_energy = 2.0
 sky_mode = 1
 
-[node name="Lock3DDoor" parent="." instance=ExtResource("1_etlvv")]
+[node name="Lock3DDoor" parent="." instance=ExtResource("1_brnvp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 460.634, 0)
+number_of_pins = 5
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.268331, -0.291721, 0.918095, 0.0818372, 0.956504, 0.280006, -0.959844, 0, 0.280533, 12.0455, 474.575, 0)
