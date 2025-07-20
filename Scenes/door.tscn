@@ -74,6 +74,7 @@ shape = SubResource("BoxShape3D_h7j2x")
 
 [node name="PromptLabel" type="Label3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 0, 2.20409, -0.00859594)
+visible = false
 text = "Press E to Interact"
 font_size = 64
 outline_size = 16

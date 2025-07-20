@@ -1,12 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://cjgpmwodnkoow"]
+[gd_scene load_steps=15 format=3 uid="uid://cjgpmwodnkoow"]
 
 [ext_resource type="Script" uid="uid://cc1gv5jk3stmh" path="res://Scripts/camera.gd" id="1_3jr7h"]
 [ext_resource type="PackedScene" uid="uid://du2bmak3jhovq" path="res://Scenes/npc.tscn" id="1_okrnj"]
 [ext_resource type="PackedScene" uid="uid://d3i38xyggmean" path="res://Scenes/Archie_house_001.tscn" id="2_bu6dc"]
 [ext_resource type="PackedScene" uid="uid://cgbv576wetyhr" path="res://Scenes/player.tscn" id="2_n87ef"]
-[ext_resource type="PackedScene" uid="uid://dn1e83umbo351" path="res://Scenes/window.tscn" id="5_bu6dc"]
 [ext_resource type="PackedScene" uid="uid://d0lysq6jxo3v1" path="res://Scenes/door.tscn" id="5_xi0mm"]
 [ext_resource type="PackedScene" uid="uid://cg2pf5r7inr0o" path="res://Scenes/lock_door_view.tscn" id="6_bu6dc"]
+[ext_resource type="PackedScene" uid="uid://1h4xd8xvf6x8" path="res://Scenes/lock_bedroom_door_view.tscn" id="7_gau5j"]
+[ext_resource type="PackedScene" uid="uid://bouyoyvnjmt2m" path="res://Scenes/lock_kitchen_door_view.tscn" id="8_7ug6d"]
+[ext_resource type="PackedScene" uid="uid://lchi06xg5d6h" path="res://Scenes/safe.tscn" id="9_7ug6d"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_3jr7h"]
 vertices = PackedVector3Array(-4.80564, 1, 0.171805, -4.80564, 1, 4.6718, 12.4444, 1, 4.6718, 12.4444, 1, 0.171805)
@@ -47,9 +49,9 @@ navigation_mesh = SubResource("NavigationMesh_3jr7h")
 use_edge_connections = false
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="OutsideRegion"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.77496, 1.43051e-06, 2.44108)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.23429, 1.43051e-06, -9.59488)
 use_collision = true
-size = Vector3(5.53855, 1, 18.1612)
+size = Vector3(29.6105, 1, 27.0799)
 
 [node name="InsideRegion" type="NavigationRegion3D" parent="."]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0982647, -0.503533, 1.97404)
@@ -102,9 +104,19 @@ handle_input_locally = false
 render_target_update_mode = 0
 
 [node name="Door" parent="." instance=ExtResource("5_xi0mm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.32911, 1.17583, -0.258961)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.27315, 1.12382, -0.291142)
+object_name = "EntranceDoor"
 lock_scene = ExtResource("6_bu6dc")
 
-[node name="Window" parent="." instance=ExtResource("5_bu6dc")]
-transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, -1.29412, 0.983375, -0.471883)
-lock_scene = ExtResource("6_bu6dc")
+[node name="BedroomDoor" parent="." instance=ExtResource("5_xi0mm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3747, 1.12382, 6.043)
+object_name = "BedroomDoor"
+lock_scene = ExtResource("7_gau5j")
+
+[node name="KitchenDoor" parent="." instance=ExtResource("5_xi0mm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3747, 1.12382, 11.8556)
+object_name = "BedroomDoor"
+lock_scene = ExtResource("8_7ug6d")
+
+[node name="Safe" parent="." instance=ExtResource("9_7ug6d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6552, 0.626069, 4.81744)
