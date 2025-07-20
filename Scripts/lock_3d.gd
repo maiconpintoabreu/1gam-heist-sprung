@@ -7,7 +7,7 @@ signal lock_opened
 @onready var lock_pick_tool: LockPickTool = $LockPickTool
 
 # Export variables - configure in editor inspector
-@export var mouse_sensitivity: float = 0.5
+@export var mouse_sensitivity: float = 0.2
 @export var pin_switch_threshold: float = 50.0
 
 var pins: Array[Pin3D] = []
@@ -56,8 +56,7 @@ func _input(event: InputEvent) -> void:
 	elif event is InputEventMouseMotion:
 		if tool_mode and lock_pick_tool:
 			handle_tool_movement(event)
-		else:
-			handle_direct_pin_movement(event)
+
 
 func handle_tool_movement(event: InputEventMouseMotion):
 	if pin_selection_mode:
@@ -75,9 +74,7 @@ func handle_direct_pin_movement(event: InputEventMouseMotion):
 		if abs(accumulated_x_movement) >= pin_switch_threshold:
 			var direction = sign(accumulated_x_movement)
 			accumulated_x_movement = 0.0
-	else:
-		if selected_pin:
-			selected_pin.move_pin(-event.relative.y * mouse_sensitivity)
+
 
 
 

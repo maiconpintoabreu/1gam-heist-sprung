@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1q2cbpof1mjv"]
+
+[ext_resource type="PackedScene" uid="uid://l2yufkl3ydgl" path="res://Assets/lock_design_001.glb" id="1_1d2md"]
+
+[node name="lock_design_001" instance=ExtResource("1_1d2md")]
