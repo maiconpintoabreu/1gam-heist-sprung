@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://m3xr7witawb5"]
+
+[ext_resource type="PackedScene" uid="uid://d3i38xyggmean" path="res://Scenes/Archie_house_001.tscn" id="1_4truh"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="house" parent="." instance=ExtResource("1_4truh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75166, 0, -7.88603)

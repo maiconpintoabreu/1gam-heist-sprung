@@ -1,26 +1,21 @@
-[gd_scene load_steps=13 format=3 uid="uid://hvltfjw7gdec"]
+[gd_scene load_steps=12 format=3 uid="uid://hvltfjw7gdec"]
 
 [ext_resource type="Script" uid="uid://cc1gv5jk3stmh" path="res://Scripts/camera.gd" id="1_3jr7h"]
 [ext_resource type="PackedScene" uid="uid://du2bmak3jhovq" path="res://Scenes/npc.tscn" id="1_okrnj"]
+[ext_resource type="PackedScene" uid="uid://d3i38xyggmean" path="res://Scenes/Archie_house_001.tscn" id="2_bu6dc"]
 [ext_resource type="PackedScene" uid="uid://cgbv576wetyhr" path="res://Scenes/player.tscn" id="2_n87ef"]
 [ext_resource type="PackedScene" uid="uid://dn1e83umbo351" path="res://Scenes/window.tscn" id="5_bu6dc"]
 [ext_resource type="PackedScene" uid="uid://d0lysq6jxo3v1" path="res://Scenes/door.tscn" id="5_xi0mm"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_3jr7h"]
-vertices = PackedVector3Array(0.211375, 1, 0.390457, 0.211375, 1, 1.64046, 4.71138, 1, 1.64046, 4.71138, 1, 0.390457)
+vertices = PackedVector3Array(-4.80564, 1, 0.171805, -4.80564, 1, 4.6718, 12.4444, 1, 4.6718, 12.4444, 1, 0.171805)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 geometry_parsed_geometry_type = 1
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_n87ef"]
-vertices = PackedVector3Array(-4.5, 1, -4.5, -4.5, 1, 4.5, 4.5, 1, 4.5, 4.5, 1, -4.5)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+vertices = PackedVector3Array(12.8076, 0.879284, -15.1907, 12.8076, 0.879284, -10.6907, 17.3076, 0.879284, -10.6907, 17.3076, 0.879284, -15.1907, 11.5576, 0.879284, -4.69069, 11.5576, 0.879284, -9.19069, 11.0576, 0.879284, -9.44069, 9.30756, 0.879284, -4.44069, 4.80756, 0.879284, 1.30931, 7.80756, 0.879284, 1.05931, 9.05756, 0.879284, 1.55931, 11.3076, 0.879284, -13.1907, 4.80756, 0.879284, -13.1907, 17.0576, 0.879284, -4.69069, 17.3076, 0.879284, -9.19069, 18.8076, 0.879284, -9.19069, 18.5576, 0.879284, -7.19069, 18.8076, 0.879284, -4.69069, 25.0576, 0.879284, -4.69069, 25.3076, 0.879284, -7.94069, 25.3076, 0.879284, -9.19069, 10.8076, 0.879284, -3.19069, 10.5576, 0.879284, -1.69069, 10.8076, 0.879284, 1.30931, 17.0576, 0.879284, 1.30931, 17.3076, 0.879284, -2.19069, 17.3076, 0.879284, -3.19069)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(7, 9, 8), PackedInt32Array(9, 7, 10), PackedInt32Array(11, 6, 12), PackedInt32Array(12, 6, 7), PackedInt32Array(12, 7, 8), PackedInt32Array(4, 5, 13), PackedInt32Array(13, 5, 14), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 17), PackedInt32Array(20, 17, 16), PackedInt32Array(20, 16, 15), PackedInt32Array(25, 24, 26), PackedInt32Array(26, 24, 23), PackedInt32Array(26, 23, 22), PackedInt32Array(26, 22, 21)]
 geometry_parsed_geometry_type = 1
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7p874"]
-albedo_color = Color(0.262932, 0.262933, 0.262932, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3jr7h"]
-albedo_color = Color(0.641934, 0.641934, 0.641934, 1)
 
 [sub_resource type="Environment" id="Environment_3jr7h"]
 
@@ -31,7 +26,7 @@ albedo_color = Color(0.641934, 0.641934, 0.641934, 1)
 [node name="House" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.191443, 0.981504, 0, -0.981504, 0.191443, -8.58746, 9, 0.567395)
+transform = Transform3D(-0.711131, 0.690056, -0.134596, 0, 0.191443, 0.981504, 0.703059, 0.697978, -0.136141, -11.2535, 6.65414, -0.140688)
 projection = 1
 current = true
 size = 10.523
@@ -42,8 +37,8 @@ target_position = Vector3(-4.72236, -94.0111, -33.7582)
 collide_with_areas = true
 
 [node name="NavigationLink3D" type="NavigationLink3D" parent="."]
-start_position = Vector3(-5.61461, 0.110114, -1.41417)
-end_position = Vector3(-4.36475, 0.140821, -1.40422)
+start_position = Vector3(-8.443, 1, -1.332)
+end_position = Vector3(-8.404, 1, 1.852)
 
 [node name="OutsideRegion" type="NavigationRegion3D" parent="."]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.2015, -0.503533, -0.463773)
@@ -51,9 +46,9 @@ navigation_mesh = SubResource("NavigationMesh_3jr7h")
 use_edge_connections = false
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="OutsideRegion"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.48065, 4.76837e-07, 0.975937)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.77496, 1.43051e-06, 2.44108)
 use_collision = true
-size = Vector3(5.53855, 1, 2.17096)
+size = Vector3(5.53855, 1, 18.1612)
 
 [node name="InsideRegion" type="NavigationRegion3D" parent="."]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0982647, -0.503533, 1.97404)
@@ -61,35 +56,20 @@ navigation_mesh = SubResource("NavigationMesh_n87ef")
 use_edge_connections = false
 navigation_layers = 2
 
-[node name="CSGBox3D" type="CSGBox3D" parent="InsideRegion"]
-use_collision = true
-size = Vector3(10, 1, 10)
-material = SubResource("StandardMaterial3D_7p874")
+[node name="house" parent="InsideRegion" instance=ExtResource("2_bu6dc")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8.93979, 0.503533, 1.97404)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="InsideRegion"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00372219, 0.973145, -5.35656)
-size = Vector3(10, 2.94629, 0.730469)
-material = SubResource("StandardMaterial3D_3jr7h")
+[node name="NavigationLink3D" type="NavigationLink3D" parent="InsideRegion"]
+start_position = Vector3(14.8771, 1.38194, -4.82033)
+end_position = Vector3(14.9546, 1.46293, -2.31593)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="InsideRegion"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00372219, 0.973145, 5.35811)
-size = Vector3(10, 2.94629, 0.730469)
-material = SubResource("StandardMaterial3D_3jr7h")
+[node name="NavigationLink3D2" type="NavigationLink3D" parent="InsideRegion"]
+start_position = Vector3(15.075, 1, -11.388)
+end_position = Vector3(15.125, 1, -8.625)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="InsideRegion"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.36106, 0.973145, 0.00514364)
-size = Vector3(11.4372, 2.94629, 0.730469)
-material = SubResource("StandardMaterial3D_3jr7h")
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="InsideRegion"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.35361, 0.973145, -1.69354)
-size = Vector3(8.05153, 2.94629, 0.730469)
-material = SubResource("StandardMaterial3D_3jr7h")
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="InsideRegion"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.35361, 0.973145, 5.11986)
-size = Vector3(1.20364, 2.94629, 0.730469)
-material = SubResource("StandardMaterial3D_3jr7h")
+[node name="NavigationLink3D3" type="NavigationLink3D" parent="InsideRegion"]
+start_position = Vector3(17.066, 1, -7.359)
+end_position = Vector3(19.023, 1, -6.611)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.0105626, 0.999254, 0.0371419, 0.569983, -0.0245021, 0.821291, 0.821589, 0.0298452, -0.569299, -1.2172, 13.6812, 0.89975)
@@ -101,12 +81,12 @@ camera_attributes = SubResource("CameraAttributesPractical_iqtyj")
 compositor = SubResource("Compositor_xi0mm")
 
 [node name="NPC" parent="." node_paths=PackedStringArray("nav_mesh") instance=ExtResource("1_okrnj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28863, 1.02133, 3.90662)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -14.5648, 0.607781, 8.56184)
 nav_mesh = NodePath("../InsideRegion")
 
 [node name="Player" parent="." instance=ExtResource("2_n87ef")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.999569, 0.0293522, 0, -0.0293522, 0.999569, -8.66446, 1.01984, -1.31711)
+transform = Transform3D(0.5, 0, 0, 0, 0.499784, 0.0146761, 0, -0.0146761, 0.499784, -8.66446, 0.593282, -4.78358)
 speed = 2.0
 
 [node name="LockViewContainer" type="SubViewportContainer" parent="." groups=["lock_ui"]]
@@ -121,7 +101,7 @@ handle_input_locally = false
 render_target_update_mode = 0
 
 [node name="Door" parent="." instance=ExtResource("5_xi0mm")]
-transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, -5.182, 1.96463, -2.35306)
+transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, -8.84564, 1.02735, -0.00935745)
 
 [node name="Window" parent="." instance=ExtResource("5_bu6dc")]
-transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, -1.29412, 0.983375, -0.471883)
+transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, -7.34303, 1.24605, 0.0823219)

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhckb2crrpy24"]
+
+[ext_resource type="PackedScene" uid="uid://djsxyylgns7y3" path="res://Assets/house/export_mesh/SM_pillar.glb" id="1_7giit"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2shnf"]
+points = PackedVector3Array(-0.228402, -2.38419e-07, -0.121887, -0.228402, -2.38419e-07, 0.121887, -0.228402, 2.66, -0.121887, 0.228403, -2.38419e-07, -0.121887, 0.228403, -2.38419e-07, 0.121887, -0.228402, 2.66, 0.121887, 0.228403, 2.66, -0.121887, 0.228403, 2.66, 0.121887)
+
+[node name="SM_pillar2" instance=ExtResource("1_7giit")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SM_pillar" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SM_pillar/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_2shnf")

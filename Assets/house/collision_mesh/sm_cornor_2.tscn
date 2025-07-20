@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://g5cj3hik8m4w"]
+
+[ext_resource type="PackedScene" uid="uid://6bionkja76nf" path="res://Assets/house/export_mesh/SM_cornor.glb" id="1_ytfu7"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pg2ey"]
+points = PackedVector3Array(-0.121111, -0.021111, 0.172245, 0.132222, 2.68111, 2.03002, -0.121111, 2.68111, 2.03002, 0.132222, -0.021111, 2.03002, 0.132222, 2.68111, 0.172245, -0.121111, 2.68111, 0.172245, -0.121111, -0.021111, 2.03002, 0.132222, -0.021111, 0.172245)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4jmoa"]
+points = PackedVector3Array(0.1, 2.64068, 0.167794, -2.02111, -0.021111, -0.123282, -2.02111, -0.021111, 0.129985, -2.02111, 2.68111, -0.123282, 0.132222, -0.021111, -0.123282, 0.132222, 2.68111, -0.123282, 0.1, 0.0193247, 0.167794, -2.02111, 2.68111, 0.129985, -0.121347, -0.021111, 0.172216, -0.121347, 2.68111, 0.172216)
+
+[node name="SM_cornor2" instance=ExtResource("1_ytfu7")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SM_cornor" index="0"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="SM_cornor/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_pg2ey")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SM_cornor/StaticBody3D" index="1"]
+shape = SubResource("ConvexPolygonShape3D_4jmoa")

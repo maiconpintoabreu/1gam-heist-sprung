@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://j1od1loeyauk"]
+
+[ext_resource type="PackedScene" uid="uid://03tqjyusqpge" path="res://Assets/house/export_mesh/SM_window.glb" id="1_g0025"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ra8v5"]
+points = PackedVector3Array(-1, 0, -0.1, 1, 0, -0.1, -1, 0, 0.0993195, -1, 2.66, -0.1, 1, 0, 0.0993195, 1, 2.66, -0.1, -0.508418, 0.69989, 0.164723, -1, 2.66, 0.0993195, 0.508222, 0.69989, 0.164723, 1, 2.66, 0.0993195, -0.508418, 0.72723, 0.164723, 0.508222, 0.72723, 0.164723)
+
+[node name="SM_window2" instance=ExtResource("1_g0025")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SM_window" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SM_window/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_ra8v5")
