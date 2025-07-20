@@ -64,7 +64,7 @@ script = ExtResource("1_w6aom")
 lock_scene = ExtResource("2_p0e35")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 1, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = SubResource("BoxMesh_h7j2x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://d3i38xyggmean"]
 
-[ext_resource type="PackedScene" uid="uid://dxvwmvxj8ei6m" path="res://collision_mesh/sm_door_way_2.tscn" id="1_wyu4p"]
-[ext_resource type="PackedScene" uid="uid://j1od1loeyauk" path="res://collision_mesh/sm_window.tscn" id="2_j227o"]
-[ext_resource type="PackedScene" uid="uid://g5cj3hik8m4w" path="res://collision_mesh/sm_cornor_2.tscn" id="3_6ewrw"]
-[ext_resource type="PackedScene" uid="uid://b7onxyyy2gfko" path="res://collision_mesh/sm_wall.tscn" id="4_aaa0i"]
-[ext_resource type="PackedScene" uid="uid://b4ifpety4gtud" path="res://collision_mesh/sm_floor.tscn" id="5_5pnd0"]
-[ext_resource type="PackedScene" uid="uid://2a2ob6grjgb3" path="res://collision_mesh/sm_blinds_2.tscn" id="6_j227o"]
+[ext_resource type="PackedScene" uid="uid://dxvwmvxj8ei6m" path="res://Assets/house/collision_mesh/sm_door_way_2.tscn" id="1_wyu4p"]
+[ext_resource type="PackedScene" uid="uid://j1od1loeyauk" path="res://Assets/house/collision_mesh/sm_window.tscn" id="2_j227o"]
+[ext_resource type="PackedScene" uid="uid://g5cj3hik8m4w" path="res://Assets/house/collision_mesh/sm_cornor_2.tscn" id="3_6ewrw"]
+[ext_resource type="PackedScene" uid="uid://b7onxyyy2gfko" path="res://Assets/house/collision_mesh/sm_wall.tscn" id="4_aaa0i"]
+[ext_resource type="PackedScene" uid="uid://b4ifpety4gtud" path="res://Assets/house/collision_mesh/sm_floor.tscn" id="5_5pnd0"]
+[ext_resource type="PackedScene" uid="uid://2a2ob6grjgb3" path="res://Assets/house/collision_mesh/sm_blinds_2.tscn" id="6_j227o"]
 
 [node name="house" type="Node3D"]
 
