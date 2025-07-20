@@ -1,4 +1,4 @@
-extends RigidBody3D
+extends StaticBody3D
 class_name LockableObject
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer

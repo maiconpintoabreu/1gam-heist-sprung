@@ -3,24 +3,33 @@ class_name Player
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var ray_cast_3d: RayCast3D = $RayCast3D
+@onready var animation_player: AnimationPlayer = $Ned_animation_cyc/AnimationPlayer
 
 @export var speed: float = 1.0
 var target_rotation_angle: float = 0
 var current_interactable = null
 
+func _ready() -> void:
+	animation_player.play("Ned_idle_breathing")
 
 func _physics_process(_delta: float) -> void:
 	if !navigation_agent_3d.is_target_reached() and navigation_agent_3d.is_target_reachable() and !navigation_agent_3d.is_navigation_finished():
 		var point = navigation_agent_3d.get_next_path_position()
 		var local_point = point - global_position
 		var direction = local_point.normalized()
+		direction.y = 0
 		rotatePlayer(direction)
 		
 		velocity = direction * speed
+		if velocity.length() > 0:
+			animation_player.play("Ned_run")
+		else: 
+			animation_player.play("Ned_idle_breathing")
 		rotation.y = target_rotation_angle
 		move_and_slide()
 	else:
 		velocity = Vector3.ZERO
+		animation_player.play("Ned_idle_breathing")
 	
 	check_for_interactables()
 
