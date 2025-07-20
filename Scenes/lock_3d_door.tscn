@@ -1,10 +1,16 @@
-[gd_scene load_steps=51 format=4 uid="uid://dqmyq7bf7lpa7"]
+[gd_scene load_steps=57 format=4 uid="uid://dqmyq7bf7lpa7"]
 
 [ext_resource type="Script" uid="uid://7tqsinkobqbp" path="res://Scripts/lock_3d.gd" id="1_hp240"]
 [ext_resource type="PackedScene" uid="uid://dk34pftmuxl2f" path="res://Scenes/pin_3d_variant_1.tscn" id="1_pd4fm"]
 [ext_resource type="PackedScene" uid="uid://ccfbe0ur62m62" path="res://Scenes/lock_pick_tool.tscn" id="2_762yy"]
 [ext_resource type="PackedScene" uid="uid://1s8lk437i55c" path="res://Scenes/pin_3d_variant_2.tscn" id="4_ao250"]
+[ext_resource type="PackedScene" uid="uid://5u5txbsclhgq" path="res://Scenes/pin_3d_variant_4.tscn" id="5_ec0n1"]
 [ext_resource type="PackedScene" uid="uid://1om5xbdxyree" path="res://Scenes/pin_3d_variant_3.tscn" id="5_v1aah"]
+[ext_resource type="PackedScene" uid="uid://bxbycpc2bq0v6" path="res://Scenes/pin_3d_variant_5.tscn" id="6_sfumk"]
+[ext_resource type="PackedScene" uid="uid://bxrnjh1g6qd14" path="res://Scenes/pin_3d_variant_6.tscn" id="7_5pb7x"]
+[ext_resource type="PackedScene" uid="uid://ba2a1u8fwq8we" path="res://Scenes/pin_3d_variant_7.tscn" id="8_21mgk"]
+[ext_resource type="PackedScene" uid="uid://cvsd8ux67yo0u" path="res://Scenes/pin_3d_variant_8.tscn" id="9_nvaod"]
+[ext_resource type="PackedScene" uid="uid://bdejuhxfosnvr" path="res://Scenes/pin_3d_variant_9.tscn" id="10_u2d5h"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvthq"]
 
@@ -518,6 +524,7 @@ shadow_mesh = SubResource("ArrayMesh_y0ug8")
 
 [node name="Lock3DDoor" type="Node3D"]
 script = ExtResource("1_hp240")
+pin_variant_scenes = Array[PackedScene]([ExtResource("1_pd4fm"), ExtResource("4_ao250"), ExtResource("5_v1aah"), ExtResource("5_ec0n1"), ExtResource("6_sfumk"), ExtResource("7_5pb7x"), ExtResource("8_21mgk"), ExtResource("9_nvaod"), ExtResource("10_u2d5h")])
 
 [node name="Cylinder_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8.2, -13.6)

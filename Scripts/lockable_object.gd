@@ -7,7 +7,7 @@ class_name LockableObject
 @export var object_name: String = "Door"
 @export var is_locked: bool = true
 @export var lock_pins: int = 4
-@export var lock_difficulty: float = 1.0
+
 
 # NEW: Configurable lock scene - set this in the editor!
 @export var lock_scene: PackedScene
@@ -61,7 +61,7 @@ func show_lock_view():
 
 func _connect_lock_signals():
 	# Look for Lock3D node and connect signals
-	var lock_3d = current_lock_instance.get_node("Lock3D")
+	var lock_3d = current_lock_instance.get_node("Lock3DDoor")
 	if lock_3d:
 		# Connect to existing signals or create new ones
 		if lock_3d.has_signal("lock_opened"):
