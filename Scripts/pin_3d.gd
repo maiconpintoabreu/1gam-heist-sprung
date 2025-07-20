@@ -1,89 +1,148 @@
 extends Node3D
 class_name Pin3D
-
 signal pin_state_changed
 
-# Editor-assigned node references
-@onready var spring_pin: RigidBody3D = $SpringPin
-@onready var pin_hole: Node3D = $PinHole
-@onready var pin_hole_detection: Area3D = $PinHole/PinHoleDetection
-@onready var spring_model: Node3D = $SpringPin/SM_spring_pin2
+# Node references
+@onready var shearline_object: RigidBody3D = $ShearLineObject
+@onready var top_of_pin: StaticBody3D = $TopOfPin
+@onready var spring_joint: SliderJoint3D = $SpringJoint
+@onready var driver_pin: RigidBody3D = $DriverPin
+@onready var key_pin: RigidBody3D = $KeyPin
+@onready var spring_mesh: MeshInstance3D = $Model
+@onready var shear_line: Area3D = $ShearLine
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
-# Export variables - all configurable in editor
-@export var spring_force_strength: float = 20.0  # How hard spring pulls back to rest
-@export var spring_compression_factor: float = 0.7  # Visual compression amount
-@export var max_compression_distance: float = 1.0  # Distance for full visual compression
-
-var original_spring_position: Vector3
+# Original positions
 var original_spring_scale: Vector3
+var original_key_position: Vector3      # KeyPin is now the reference point
+var original_driver_position: Vector3   
+var original_shearline_position: Vector3
+var target_spring_scale: Vector3
+
+# NEW: Locked position storage
+var locked_key_position: Vector3        # Position where KeyPin was when unlocked
+var locked_driver_position: Vector3     # Position where DriverPin was when unlocked
+var locked_shearline_position: Vector3  # Position where ShearLineObject was when unlocked
+
+# Offsets from KeyPin (calculated at startup)
+var driver_to_key_offset: Vector3       # How far DriverPin is from KeyPin
+var shearline_to_key_offset: Vector3    # How far ShearLineObject is from KeyPin
+
+@export var spring_animation_speed: float = 20.0
+@export var compression_distance: float = 3.0
+
 var is_in_sweet_spot: bool = false
 
 func _ready():
-	original_spring_position = spring_pin.position
+	setup_visual_spring()
+	calculate_offsets()
+
+func setup_visual_spring():
+	if spring_mesh:
+		original_spring_scale = spring_mesh.scale  
+		target_spring_scale = spring_mesh.scale
+
+func calculate_offsets():
+	"""Calculate the offset relationships with KeyPin as the leader"""
+	# Store original positions
+	original_key_position = key_pin.position
+	original_driver_position = driver_pin.position
+	original_shearline_position = shearline_object.position
 	
-	if spring_model:
-		original_spring_scale = spring_model.scale
+	# Calculate offsets from KeyPin to other components
+	driver_to_key_offset = original_driver_position - original_key_position
+	shearline_to_key_offset = original_shearline_position - original_key_position
 
 func _physics_process(delta: float):
-	# Always apply spring force to pull pin back to rest position
-	apply_spring_restoration_force()
-	
-	# Update visual compression based on current position
-	update_visual_compression()
-
-func apply_spring_restoration_force():
-	
 	if is_in_sweet_spot:
-		return  # Pin stays locked in position!
-	# Calculate force needed to return to original position
-	var displacement = spring_pin.position - original_spring_position
-	var restoration_force = -displacement * spring_force_strength
+		# Pin is unlocked - keep everything frozen at locked positions
+		freeze_at_locked_positions()
+	else:
+		# Pin is still locked - allow normal movement
+		update_follower_positions()
 	
-	# Only apply Y-axis force (up/down movement)
-	restoration_force.x = 0
-	restoration_force.z = 0
+	update_spring_visual()
 	
-	spring_pin.apply_force(restoration_force)
+	if spring_mesh and target_spring_scale:
+		spring_mesh.scale = spring_mesh.scale.lerp(target_spring_scale, spring_animation_speed * delta)
 
-func update_visual_compression():
-	if spring_model:
-		# Calculate how far we've moved from the original position
-		var displacement = spring_pin.position.y - original_spring_position.y
-		
-		# Convert displacement to compression ratio (0 to 1)
-		var compression_ratio = clamp(abs(displacement) / max_compression_distance, 0.0, 1.0)
-		
-		# Apply visual compression
-		var new_scale = original_spring_scale
-		new_scale.y = original_spring_scale.y * (1.0 - compression_ratio * spring_compression_factor)
-		new_scale.y = max(new_scale.y, original_spring_scale.y * 0.1)
-		
-		spring_model.scale = new_scale
+func freeze_at_locked_positions():
+	"""Keep all components frozen at their locked positions"""
+	# Force KeyPin to stay at locked position
+	key_pin.position = locked_key_position
+	key_pin.linear_velocity = Vector3.ZERO
+	key_pin.angular_velocity = Vector3.ZERO
+	
+	# Force followers to stay at their locked positions
+	driver_pin.position = locked_driver_position
+	driver_pin.linear_velocity = Vector3.ZERO
+	driver_pin.angular_velocity = Vector3.ZERO
+	
+	shearline_object.position = locked_shearline_position
+	shearline_object.linear_velocity = Vector3.ZERO
+	shearline_object.angular_velocity = Vector3.ZERO
 
-# Sweet spot detection (unchanged)
-func _on_pin_hole_detection_body_entered(body: RigidBody3D) -> void:
-	if body == spring_pin:
-		is_in_sweet_spot = true
-		print(name + ": Entered Sweet Spot!")
-		audio_stream_player.play()
-		pin_state_changed.emit()
+func update_follower_positions():
+	"""Make DriverPin and ShearLineObject follow KeyPin movement (only when not locked)"""
+	# Calculate how much the KeyPin has moved from its original position
+	var key_displacement = key_pin.position - original_key_position
+	
+	# Update DriverPin position based on KeyPin movement
+	var target_driver_position = original_driver_position + key_displacement
+	driver_pin.position = target_driver_position
+	
+	# Update ShearLineObject position based on KeyPin movement
+	var target_shearline_position = original_shearline_position + key_displacement
+	shearline_object.position = target_shearline_position
+	
+	# Optional: Clear velocities to prevent drift
+	driver_pin.linear_velocity = Vector3.ZERO
+	shearline_object.linear_velocity = Vector3.ZERO
 
-func _on_pin_hole_detection_body_exited(body: RigidBody3D) -> void:
-	if body == spring_pin:
-		is_in_sweet_spot = false
-		print(name + ": Exited Sweet Spot!")
-		pin_state_changed.emit()
+func update_spring_visual():
+	if not spring_mesh:
+		return
+		
+	# Calculate spring compression based on DriverPin position (since spring connects to it)
+	var position_change = driver_pin.position.y - original_driver_position.y
+	var movement_ratio = clamp(position_change / compression_distance, -1.0, 1.0)
+	
+	# Calculate target scale based on movement direction
+	var new_scale = original_spring_scale
+	new_scale.y = original_spring_scale.y * (1.0 - movement_ratio * 0.6)
+	new_scale.y = clamp(new_scale.y, original_spring_scale.y * 0.3, original_spring_scale.y * 1.8)
+	
+	target_spring_scale = new_scale
+
+# Sweet spot detection
+func _on_shear_line_body_entered(body: RigidBody3D) -> void:
+	if body == driver_pin or body == key_pin:
+		check_unlock_condition()
+
+func _on_shear_line_body_exited(body: RigidBody3D) -> void:
+	if body == shearline_object:
+		check_unlock_condition()
+
+func check_unlock_condition():
+	# If already unlocked, stay unlocked and frozen
+	if is_in_sweet_spot:
+		return
+	
+	var bodies_in_shear_line = shear_line.get_overlapping_bodies()
+	
+	for body in bodies_in_shear_line:
+		if body == shearline_object:
+			is_in_sweet_spot = true
+			
+			# STORE THE LOCKED POSITIONS - freeze everything here!
+			locked_key_position = key_pin.position
+			locked_driver_position = driver_pin.position
+			locked_shearline_position = shearline_object.position
+			
+			print("Pin unlocked and FROZEN at position: ", locked_key_position)
+			audio_stream_player.play()
+			pin_state_changed.emit()
+			return
 
 func is_unlocked() -> bool:
 	return is_in_sweet_spot
-
-func reset_pin() -> void:
-	spring_pin.position = original_spring_position
-	spring_pin.linear_velocity = Vector3.ZERO
-	spring_pin.angular_velocity = Vector3.ZERO
-	
-	if spring_model:
-		spring_model.scale = original_spring_scale
-	
-	is_in_sweet_spot = false

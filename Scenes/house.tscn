@@ -1,4 +1,3 @@
-[gd_scene load_steps=12 format=3 uid="uid://hvltfjw7gdec"]
 
 [ext_resource type="Script" uid="uid://cc1gv5jk3stmh" path="res://Scripts/camera.gd" id="1_3jr7h"]
 [ext_resource type="PackedScene" uid="uid://du2bmak3jhovq" path="res://Scenes/npc.tscn" id="1_okrnj"]
@@ -102,6 +101,10 @@ render_target_update_mode = 0
 
 [node name="Door" parent="." instance=ExtResource("5_xi0mm")]
 transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, -8.84564, 1.02735, -0.00935745)
+transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, -5.182, 1.96463, -2.35306)
+lock_scene = ExtResource("6_bu6dc")
 
 [node name="Window" parent="." instance=ExtResource("5_bu6dc")]
 transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, -7.34303, 1.24605, 0.0823219)
+transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, -1.29412, 0.983375, -0.471883)
+lock_scene = ExtResource("6_bu6dc")
