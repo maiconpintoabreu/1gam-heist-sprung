@@ -4,10 +4,12 @@ class_name Player
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var ray_cast_3d: RayCast3D = $RayCast3D
 @onready var animation_player: AnimationPlayer = $Ned_animation_cyc/AnimationPlayer
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 @export var speed: float = 1.0
 var target_rotation_angle: float = 0
 var current_interactable = null
+var is_moving: bool = false 
 
 func _ready() -> void:
 	animation_player.play("Ned_idle_breathing")
@@ -22,14 +24,31 @@ func _physics_process(_delta: float) -> void:
 		
 		velocity = direction * speed
 		if velocity.length() > 0:
+			# Always play run animation while moving
 			animation_player.play("Ned_run")
+			
+			# Only change audio if we weren't moving before
+			if not is_moving:
+				is_moving = true
+				audio_stream_player.play()  # Start movement audio
 		else: 
+			# Always play idle animation while not moving
 			animation_player.play("Ned_idle_breathing")
+			
+			# Only change audio if we were moving before
+			if is_moving:
+				is_moving = false
+				audio_stream_player.stop()  # Stop movement audio
 		rotation.y = target_rotation_angle
 		move_and_slide()
 	else:
+		# Character has reached destination - ensure we're in idle state
 		velocity = Vector3.ZERO
-		animation_player.play("Ned_idle_breathing")
+		animation_player.play("Ned_idle_breathing")  # Always play idle animation
+		
+		if is_moving:
+			is_moving = false
+			audio_stream_player.stop()  # Stop movement audio
 	
 	check_for_interactables()
 
