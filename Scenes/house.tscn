@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cjgpmwodnkoow"]
+[gd_scene load_steps=25 format=3 uid="uid://cjgpmwodnkoow"]
 
 [ext_resource type="Script" uid="uid://cc1gv5jk3stmh" path="res://Scripts/camera.gd" id="1_3jr7h"]
 [ext_resource type="PackedScene" uid="uid://du2bmak3jhovq" path="res://Scenes/npc.tscn" id="1_okrnj"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://1h4xd8xvf6x8" path="res://Scenes/lock_bedroom_door_view.tscn" id="7_gau5j"]
 [ext_resource type="PackedScene" uid="uid://bouyoyvnjmt2m" path="res://Scenes/lock_kitchen_door_view.tscn" id="8_7ug6d"]
 [ext_resource type="PackedScene" uid="uid://lchi06xg5d6h" path="res://Scenes/safe.tscn" id="9_7ug6d"]
+[ext_resource type="PackedScene" uid="uid://c1ox4myiucehd" path="res://Scenes/roof_test.tscn" id="10_lmwq5"]
+[ext_resource type="PackedScene" uid="uid://cyipfph37m5v0" path="res://Scenes/roof_kitchen.tscn" id="11_x4svt"]
+[ext_resource type="PackedScene" uid="uid://d27up84koe4j6" path="res://Scenes/roof_bedroom.tscn" id="12_ttg8n"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_3jr7h"]
 vertices = PackedVector3Array(-1.05229, 1, 0.143194, -1.05229, 1, 4.64319, 12.1977, 1, 4.64319, 12.1977, 1, 0.143194)
@@ -191,3 +194,15 @@ lock_scene = ExtResource("8_7ug6d")
 
 [node name="Safe" parent="." instance=ExtResource("9_7ug6d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6552, 0.626069, 4.81744)
+
+[node name="RoofMainRoom" parent="." instance=ExtResource("10_lmwq5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.76729, 1.95275, 8.00635)
+
+[node name="RoofKitchen" parent="." instance=ExtResource("11_x4svt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8767, 1.98001, 15.0439)
+
+[node name="RoofBedroom" parent="." instance=ExtResource("12_ttg8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7186, 1.9989, 3.10325)
+
+[node name="RoofBedroom2" parent="." instance=ExtResource("12_ttg8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.931, 1.9989, 9.03828)
