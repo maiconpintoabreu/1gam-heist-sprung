@@ -12,6 +12,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_WHEEL_DOWN):
+		size -= 1
 	if Input.is_action_just_pressed("click"):
 		mouse_position = get_viewport().get_mouse_position()
 		var from := project_ray_origin(mouse_position)
@@ -22,5 +24,5 @@ func _process(_delta: float) -> void:
 		var result: Dictionary = space_state.intersect_ray(query)
 		if not result.is_empty():
 			%Player.setMoveTarget(result.position)
-	position.x = %Player.global_position.x
-	position.z = %Player.global_position.z
+	position.x = %Player.global_position.x - 10
+	position.z = %Player.global_position.z - 10

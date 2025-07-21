@@ -123,7 +123,8 @@ func handle_tool_movement(event: InputEventMouseMotion):
 	if pin_selection_mode:
 		accumulated_x_movement += -event.relative.x
 		if abs(accumulated_x_movement) >= pin_switch_threshold:
-			var direction = sign(accumulated_x_movement)
+			#var direction = 
+			sign(accumulated_x_movement)
 			accumulated_x_movement = 0.0
 	else:
 		var movement_input = Vector2(-event.relative.x, -event.relative.y) * mouse_sensitivity
@@ -157,9 +158,9 @@ func set_pin_count(count: int):
 		spawn_random_pins()
 		connect_pin_signals()
 
-func respawn_random():
+func respawn_random()->void:
 	spawn_random_pins()
 	connect_pin_signals()
 
-func setup_lock(number_of_pins):
-	number_of_pins = number_of_pins
+func setup_lock(in_number_of_pins):
+	number_of_pins = in_number_of_pins
