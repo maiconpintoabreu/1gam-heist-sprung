@@ -25,9 +25,7 @@ func hide_prompt() -> void:
 func interact():
 	if is_locked:
 		show_lock_view()
-	else:
-		print("Opening " + object_name)
-		_trigger_unlock_behavior()
+
 
 func show_lock_view():
 	# Use the exported lock_scene, fallback to default if not set
